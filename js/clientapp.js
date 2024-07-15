@@ -63,40 +63,14 @@ else{
 //Check for SCORM API
 console.log('Checking for SCORM API...');
 console.log('Attempting to initialize SCORM API...');
-while(initAPI == false && initAttempt <= 50){
 
-	initAPI = scorm.init();
-	console.log('SCORM API Initialized: ' + initAPI + ' (' + initAttempt + ')');
-	initAttempt += 1;
-}
 
-scormVersion = scorm.version;
-console.log('SCORM API discovered successfully'); 
-console.log('SCORM version set to: ' + scormVersion);
-
-if(initAPI == true){
-	
-	retrieveName();	//Retrieve the user name
-	initScore();	//Initialize the course score	
-	readSuspendData();	//Read the course suspend data
-	var userLaunchData = setUserLaunchData();	//Create object that will store end-user data to pass to remote scorm launcher page
-	initSessionTime();
-	launchCourse();
-}
-else{
-	if(!scorm.API.isFound){
-		console.log('Could not find SCORM API.');
-		displayError('Could not find SCORM API. Please contact support for assistance.');
-	}
-	else if(!scorm.connection.isActive){
-		console.log('API Init failed.');
-		displayError('Could not initialize SCORM API connection. Please contact support for assistance.');
-	}
-	else{
-		console.log('Uncaught fatal course launch error.');
-		displayError('There was a problem loading the course. Please contact support for assistance.');			
-	}	
-}
+retrieveName();	//Retrieve the user name
+initScore();	//Initialize the course score	
+readSuspendData();	//Read the course suspend data
+var userLaunchData = setUserLaunchData();	//Create object that will store end-user data to pass to remote scorm launcher page
+initSessionTime();
+launchCourse();
 
 //Add event listener that listens for update messages from SCORM launcher page and updates the client LMS accordingly.
 window.addEventListener('message', function(updateMessage) {
