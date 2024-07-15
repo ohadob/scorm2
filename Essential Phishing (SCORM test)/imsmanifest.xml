@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<manifest 	identifier="S" 
+			version="1.2" 
+			xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" 
+			xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd  http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd  http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+	
+	<metadata>
+		<schema>ADL SCORM</schema>
+		<schemaversion>1.2</schemaversion>
+	</metadata>
+
+  <organizations default="MetaCompliance">
+    <organization identifier="MetaCompliance">
+    <title>Essential Phishing (SCORM test)</title>
+      <item identifier="I_A001" identifierref="A001" isvisible="true">
+        <title>Essential Phishing (SCORM test)</title>
+      </item>
+    </organization>
+  </organizations>
+
+  <resources>
+    <resource identifier="A001" type="webcontent" adlcp:scormtype="sco" href="courselauncher.html">
+		<file href="courselauncher.html"/>
+		<file href="js/clientapp.js"/>
+		<file href="js/compatibilitytest.js"/>
+		<file href="js/sessiontime.js"/>
+		<file href="js/string.js"/>
+		<file href="libs/jquery-1.7.1.min.js"/>
+		<file href="scorm/SCORM_API_wrapper.js"/>
+		<file href="scorm/scormvar.js"/>
+    </resource>
+</resources>
+
+</manifest> 
+	
